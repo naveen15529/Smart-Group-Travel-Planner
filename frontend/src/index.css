@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-slate-100;
+    /* Thick lavender, blue shades, green shades, best mixture of gradient */
+    /* Visually amusing, royal, attractive */
+    background: 
+      radial-gradient(circle at 10% 10%, rgba(138, 43, 226, 0.45) 0%, transparent 45%), /* Thick Lavender/Purple */
+      radial-gradient(circle at 90% 20%, rgba(0, 210, 255, 0.4) 0%, transparent 45%), /* Royal Cyan Blue */
+      radial-gradient(circle at 50% 90%, rgba(67, 233, 123, 0.35) 0%, transparent 50%), /* Rich Green */
+      radial-gradient(circle at 90% 90%, rgba(142, 197, 252, 0.4) 0%, transparent 45%), /* Soft Blue */
+      linear-gradient(135deg, #130f26 0%, #0a1128 50%, #0b1a20 100%); /* Deep Royal Dark Base */
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Playfair_Display'] tracking-tight;
+  }
+}
+
+@layer utilities {
+  .royal-nav {
+    @apply bg-[#0a1128]/70 backdrop-blur-md border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.3)];
+  }
+  
+  .royal-panel {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] rounded-xl overflow-hidden;
+  }
+
+  .royal-card {
+    /* Deep translucent glassmorphic cards to reduce blinding white and match the royal gradient */
+    @apply bg-[#0a1128]/60 backdrop-blur-xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)] rounded-xl overflow-hidden transition-all duration-300;
+  }
+  .royal-card:hover {
+    @apply border-[#D4AF37] shadow-[0_0_30px_rgba(212,175,55,0.4)] -translate-y-2;
+  }
+  
+  .btn-gold {
+    @apply bg-gradient-to-r from-[#C5A059] to-[#D4AF37] hover:from-[#D4AF37] hover:to-[#F1D570] text-[#0a1128] font-bold shadow-[0_0_20px_rgba(212,175,55,0.5)] transition-all duration-300;
+  }
+  
+  .text-gold {
+    @apply text-[#D4AF37];
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a1128;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(138, 43, 226, 0.5);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00d2ff;
+}
